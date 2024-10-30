@@ -4,9 +4,9 @@ void subtraction(int a, int b){
     printf("%d", sub);
 }
 int main(){
-    int x, y;
-    scanf("%d %d", &x, &y);
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
     
-    subtraction(x, y);
+    subtraction(num1, num2);
     return 0;
 }
