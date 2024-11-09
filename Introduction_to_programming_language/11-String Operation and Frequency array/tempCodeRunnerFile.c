@@ -1,2 +1,2 @@
 
-        if(ar[i] == i){
+    for(int i = 0; i<len; i++){

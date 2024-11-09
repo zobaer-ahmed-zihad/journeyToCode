@@ -12,9 +12,8 @@ int main(){
         count[ar[i]]++;
     }
     int cnt = 0;
-    for(int i = 0; i<n; i++){
+    for(int i = 0; i<100001; i++){
         if(count[i] == 1){
-            printf("%d - %d\n", i, count[i]);
             cnt++;
         }
     }

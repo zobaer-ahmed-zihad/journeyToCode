@@ -16,14 +16,16 @@ int main(){
     int count[1001] = {0};
     for(int i = 0; i<row; i++){
         for(int j = 0; j<col; j++){
-            if(a[i][j] == 2){
-                count[2]++;
+            for(int m = 0; m<number; m++){
+                if(a[i][j] == search[m]){
+                    count[search[m]]++;
+                }
             }
             
         }
     }
-    for(int i = 0; i<10; i++){
-        printf("%d - %d\n", i, count[i]);
+    for(int i = 0; i<number; i++){
+        printf("%d\n", count[search[i]]);
     }
 
     return 0;
