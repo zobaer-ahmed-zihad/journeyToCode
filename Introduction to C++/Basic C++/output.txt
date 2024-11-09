@@ -1,4 +1,1 @@
-Hello World!
-My name is zihad.
-I live in Dhaka
-Number is - 7
+7.97
