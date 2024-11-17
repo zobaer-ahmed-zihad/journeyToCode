@@ -7,7 +7,7 @@ int main(){
     cout<<a<<endl;
    }
 
-// setprecision
+// setprecision - to Specify Decimal Points
    double x = 9.32547;
    cout<<fixed<<setprecision(2)<<x;
 
