@@ -7,9 +7,12 @@ int main(){
     //Second way
     // string s("Hello world", 5);
     //Third way
-    string s = "Hello world";
-    string t(s, 5);
-   cout<<t<<endl;
+//     string s = "Hello world";
+//     string t(s, 5);
+//    cout<<t<<endl;
+    // Fourth way
+    string s(7, 'A');
+    cout<<s; 
 
    return 0;
 }
