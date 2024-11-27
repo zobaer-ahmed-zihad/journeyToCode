@@ -1,4 +1,2 @@
-for (char ch : s)
-    // {
-    //     cout << ch << endl;
-    // }
+
+//    cout<<word<<endl;
