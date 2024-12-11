@@ -10,11 +10,11 @@ int main()
     {
         cin >> ar[i];
     }
-    //long long int sum = 0;
+    // long long int sum = 0;
     for (int i = 1; i < n; i++)
     {
-        //sum += ar[i];
-        //prefix_sum[i] = sum;
+        // sum += ar[i];
+        // prefix_sum[i] = sum;
 
         // or
         prefix_sum[0] = ar[0];
