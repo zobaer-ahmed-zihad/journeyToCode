@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    //    vector<int> v; //vector initialization
+    // vector<int> v; //vector initialization
     // vector<int> v(10);// vector initialization & decleartion
     // vector<int>v(5, 20);// vector and all values are 20
     /* vector<int>v2(7, 10); //copy vector v2 to v
