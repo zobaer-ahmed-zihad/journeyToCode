@@ -82,7 +82,17 @@ void delete_from_position(Node *head, int pos)
     Node *deleteNode = tmp->next;
     tmp->next = tmp->next->next;
     delete deleteNode;
-    cout<<endl<<"Delete "<<pos<<" positions node"<<endl<<endl;
+    cout << endl
+         << "Delete " << pos << " positions node" << endl
+         << endl;
+}
+void delete_head(Node *&head)
+{
+    Node *deleteHead = head;
+    head = head->next;
+    delete deleteHead;
+    cout << "Head is deleted" << endl
+         << endl;
 }
 int main()
 {
@@ -95,7 +105,8 @@ int main()
         cout << "Option 3 : Insert at any position : " << endl;
         cout << "Option 4 : Insert at Head : " << endl;
         cout << "Option 5 : Delete from position : " << endl;
-        cout << "Option 6 : Terminate : " << endl;
+        cout << "Option 6 : Delete head : " << endl;
+        cout << "Option 7 : Terminate : " << endl;
         int op;
         cin >> op;
         if (op == 1)
@@ -138,9 +149,21 @@ int main()
             cout << "Enter delete node position : " << endl;
             int pos;
             cin >> pos;
-            delete_from_position(head, pos);
+            if (pos == 0)
+            {
+                delete_head(head);
+            }
+            else
+            {
+                delete_from_position(head, pos);
+            }
         }
         else if (op == 6)
+        {
+            cout << "Delete head " << endl;
+            delete_head(head);
+        }
+        else if (op == 7)
         {
             cout << "Terminate " << endl;
             break;
