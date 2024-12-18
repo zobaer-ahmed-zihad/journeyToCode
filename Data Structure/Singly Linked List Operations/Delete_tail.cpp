@@ -12,33 +12,18 @@ public:
         this->next = NULL;
     }
 };
-// Delete only head
-void delete_head(Node *&head)
-{
-    Node *DeleteHead = head;
-    head = head->next;
-    delete DeleteHead;
-    cout << endl
-         << "Head deleted" << endl;
-}
-// Delete any position
-void delete_any_position(Node *&head, int pos)
+
+void delete_tail(Node *head)
 {
     Node *tmp = head;
-
-     if(pos == 0)
-     {
-        delete_head(head);
-     }
-    for (int i = 1; i <= pos - 1; i++)
+    while(tmp ->next->next != NULL)
     {
-        tmp = tmp->next;
+        tmp = tmp ->next;
     }
     Node *deleteNode = tmp->next;
-    tmp->next = tmp->next->next;
+    tmp->next = NULL;
     delete deleteNode;
-    cout << endl
-         << pos << " Positions node Deleted" << endl;
+    cout<<"Tail node deleted"<<endl;
 }
 // Print linked list
 void print_linked_list(Node *head)
@@ -63,12 +48,7 @@ int main()
     a->next = b;
     b->next = c;
 
-    cout << endl
-         << "Enter position which node you want to delete : ";
-    int pos;
-    cin >> pos;
-    delete_any_position(head, pos);
-    // delete_head(head);
+    delete_tail(head);
     print_linked_list(head);
 
     return 0;

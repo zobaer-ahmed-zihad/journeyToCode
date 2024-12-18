@@ -86,6 +86,7 @@ void delete_from_position(Node *head, int pos)
          << "Delete " << pos << " positions node" << endl
          << endl;
 }
+//delete head
 void delete_head(Node *&head)
 {
     Node *deleteHead = head;
