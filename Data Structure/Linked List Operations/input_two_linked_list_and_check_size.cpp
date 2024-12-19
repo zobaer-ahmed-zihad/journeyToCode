@@ -33,6 +33,7 @@ void insert_any_position(Node *&head, Node *&tail, int val)
     {
         head = newNode;
         tail = newNode;
+        return;
     }
     tail->next = newNode;
     tail = newNode;
