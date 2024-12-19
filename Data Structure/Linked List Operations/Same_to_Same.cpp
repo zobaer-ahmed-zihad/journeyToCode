@@ -13,7 +13,7 @@ public:
     }
 };
 
-//insert any position
+// insert any position
 void insert_any_position(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -26,16 +26,7 @@ void insert_any_position(Node *&head, Node *&tail, int val)
     tail->next = newNode;
     tail = newNode;
 }
-// print linked list
-// void printf_linked_list(Node *head)
-// {
-//     Node *tmp = head;
-//     while (tmp != NULL)
-//     {
-//         cout << tmp->val << " ";
-//         tmp = tmp->next;
-//     }
-// }
+
 // Check linked list size
 int linked_list_size(Node *head)
 {
@@ -60,28 +51,49 @@ void input_linked_list(Node *&head, Node *&tail)
         insert_any_position(head, tail, val);
     }
 }
+// Check both linked list is same or not
+void check_both_are_same_or_not(Node *head1, Node *head2)
+{
+    bool flag = false;
+    int size1 = linked_list_size(head1);
+    int size2 = linked_list_size(head2);
+    Node *tmp1 = head1;
+    Node *tmp2 = head2;
+    if (size1 == size2)
+    {
+        while (tmp1 != NULL)
+        {
+            if (tmp1->val != tmp2->val)
+            {
+                flag = true;
+                break;
+            }
+            else
+            {
+                tmp1 = tmp1->next;
+                tmp2 = tmp2->next;
+            }
+        }
+    }
+    if (size1 != size2 || flag == true)
+    {
+        cout << "NO";
+    }
+    else
+    {
+        cout << "YES";
+    }
+}
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
+    Node *head1 = NULL;
+    Node *tail1 = NULL;
 
     Node *head2 = NULL;
     Node *tail2 = NULL;
 
-    cout << "Input For the First linked list : " << endl;
-    input_linked_list(head, tail);
-    cout << "Input For Fist Second linked list : " << endl;
+    input_linked_list(head1, tail1);
     input_linked_list(head2, tail2);
-
-
-    // cout << "Our First linked list " << endl;
-    // printf_linked_list(head);
-    // cout << "Our Second linked list " << endl;
-    // printf_linked_list(head2);
-
-    int size1 = linked_list_size(head);
-    int size2 = linked_list_size(head2);
-
-    (size1 == size2) ? cout << "YES" : cout << "NO";
+    check_both_are_same_or_not(head1, head2);
     return 0;
 }
