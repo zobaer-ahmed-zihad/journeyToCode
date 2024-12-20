@@ -1,4 +1,3 @@
-//https://www.hackerrank.com/contests/assignment-02-a-basic-data-structures-a-batch-03/challenges/get-me-mid
 #include <bits/stdc++.h>
 using namespace std;
 class Node
@@ -13,6 +12,7 @@ public:
         this->next = NULL;
     }
 };
+
 // insert any position
 void insert_any_position(Node *&head, Node *&tail, int val)
 {
@@ -26,6 +26,7 @@ void insert_any_position(Node *&head, Node *&tail, int val)
     tail->next = newNode;
     tail = newNode;
 }
+
 // input linked list
 void input_linked_list(Node *&head, Node *&tail)
 {
@@ -38,53 +39,44 @@ void input_linked_list(Node *&head, Node *&tail)
         insert_any_position(head, tail, val);
     }
 }
-// sort linked list
-void sort_linked_list(Node *head)
+
+// print linked list
+void printf_linked_list(Node *head)
 {
-    Node *tmp = head;
-    for (Node *i = tmp; i != NULL; i = i->next)
-    {
-        for (Node *j = i->next; j != NULL; j = j->next)
-        {
-            if (i->val < j->val)
-            {
-                swap(i->val, j->val);
-            }
-        }
-    }
-}
-// Check linked list size
-int linked_list_size(Node *head)
-{
-    int count = 0;
     Node *tmp = head;
     while (tmp != NULL)
     {
-        count++;
+        cout << tmp->val << " ";
         tmp = tmp->next;
     }
-    return count;
 }
-// print middle element
-void print_mid(Node *head)
+// Delete any position
+void delete_any_position(Node *head)
 {
-    int size = linked_list_size(head);
     Node *tmp = head;
-    if (size % 2 == 0)
+    while (tmp->next != NULL)
     {
-        for (int i = 1; i < size / 2; i++)
+        if (tmp->next->val == head->val)
+        {
+            cout<<tmp->next->val<<" "<<head->val<<endl;
+            // Node *deleteNode = tmp->next;
+            // tmp->next = deleteNode->next;
+            // delete deleteNode;
+        }
+        else
         {
             tmp = tmp->next;
         }
-        cout << tmp->val << " " << tmp->next->val;
     }
-    else
+}
+// Check duplicate value
+void check_duplicate(Node *head)
+{
+    Node *tmp = head;
+    while (tmp != NULL)
     {
-        for (int i = 1; i <= (size / 2); i++)
-        {
-            tmp = tmp->next;
-        }
-        cout << tmp->val;
+        delete_any_position(tmp);
+        tmp = tmp->next;
     }
 }
 int main()
@@ -93,7 +85,8 @@ int main()
     Node *tail = NULL;
 
     input_linked_list(head, tail);
-    sort_linked_list(head);
-    print_mid(head);
+    check_duplicate(head);
+    printf_linked_list(head);
+
     return 0;
 }
