@@ -30,6 +30,7 @@ void insert_at_tail(Node *tail, int v)
     Node *newNode = new Node(v);
     tail->next = newNode;
     newNode ->prev = tail;
+    tail = newNode;
 }
 
 int main()
