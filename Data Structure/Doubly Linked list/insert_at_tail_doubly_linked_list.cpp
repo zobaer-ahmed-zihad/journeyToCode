@@ -25,9 +25,15 @@ void print_linked_list_forward(Node *head)
     }
 }
 //Insert at tail
-void insert_at_tail(Node *tail, int v)
+void insert_at_tail(Node *&head, Node *&tail, int v)
 {
     Node *newNode = new Node(v);
+    if(head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
     tail->next = newNode;
     newNode ->prev = tail;
     tail = newNode;
@@ -47,7 +53,7 @@ int main()
 
     tail->prev = a;
 
-    insert_at_tail(tail, 100);
+    insert_at_tail(head, tail, 500);
     print_linked_list_forward(head);
     return 0;
 }
