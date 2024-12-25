@@ -39,19 +39,19 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     tail = newNode;
 }
 // input linked list
-//  void input_linked_list(Node *&head, Node *&tail)
-//  {
-//      int val;
-//      while(true)
-//      {
-//          cin>>val;
-//          if(val == -1)
-//          {
-//              break;
-//          }
-//          insert_at_tail(head, tail, val);
-//      }
-//  }
+ void input_linked_list(Node *&head, Node *&tail)
+ {
+     int val;
+     while(true)
+     {
+         cin>>val;
+         if(val == -1)
+         {
+             break;
+         }
+         insert_at_tail(head, tail, val);
+     }
+ }
 int main()
 {
     Node *head1 = NULL;
