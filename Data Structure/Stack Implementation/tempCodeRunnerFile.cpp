@@ -1,2 +1,2 @@
-t.empty() == false)
-        cout << st.top() << endl;
+
+        st.push(val);
