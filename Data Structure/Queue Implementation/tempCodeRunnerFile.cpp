@@ -1,0 +1,3 @@
+
+        head->prev = NULL;
+    }
