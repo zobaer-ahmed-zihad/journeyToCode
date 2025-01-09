@@ -38,30 +38,17 @@ int main()
     // cout << cnt << " " << cnt1;
     bool flag = false;
 
-    if (cnt != cnt1)
-    {
-        flag = true;
-        
-    }
-    else
-    { 
-        cout<<cnt1<<endl;
-        st1.pop();
-        cout<<cnt1<<endl;
-        
-        while(!st.empty())
+   if(st.size() == st1.size())
+   {
+        while(!st.empty() || !st1.empty())
         {
-            // cout<<st.top()<<" "<<st1.top()<<endl;
-            if(st.top() != st1.top())
-            {
-                flag = true;
-                break;
-            }
+            cout<<st.top()<<" "<<st1.top()<<endl;
             st.pop();
             st1.pop();
         }
-    }
-    if(flag == false)
-        cout<<"YES"<<endl;
-        else cout<<"NO"<<endl;
+   }
+
+    // if(flag == false)
+    //     cout<<"YES"<<endl;
+    //     else cout<<"NO"<<endl;
 }
