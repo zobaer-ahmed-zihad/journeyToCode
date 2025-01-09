@@ -13,42 +13,35 @@ int main()
         st.push(val);
     }
 
-    int cnt = 0;
-    while (!st.empty())
-    {
-        cnt++;
-        st.pop();
-    }
-    stack<int> st1;
-    int n1;
-    cin >> n1;
-    while (n1--)
+    // cout<<st.size()<<" "<<st.top();
+    stack<int> st2;
+    int m;
+    cin >> m;
+    while (m--)
     {
         int val;
         cin >> val;
-        st1.push(val);
+        st2.push(val);
     }
-
-    int cnt1 = 0;
-    while (!st1.empty())
-    {
-        cnt1++;
-        st1.pop();
-    }
-    // cout << cnt << " " << cnt1;
+    //  cout<<st2.size()<<" "<<st2.top();
     bool flag = false;
-
-   if(st.size() == st1.size())
-   {
-        while(!st.empty() || !st1.empty())
+    if (st.size() == st2.size())
+    {
+        while (!st.empty())
         {
-            cout<<st.top()<<" "<<st1.top()<<endl;
-            st.pop();
-            st1.pop();
+            if (st.top() == st2.top())
+            {
+                st.pop();
+                st2.pop();
+            }else{
+                flag = true;
+                break;
+            }
         }
-   }
-
-    // if(flag == false)
-    //     cout<<"YES"<<endl;
-    //     else cout<<"NO"<<endl;
+    }
+    else
+    {
+        flag = true;
+    }
+    (flag == true )? cout<<"NO": cout<<"YES";
 }
