@@ -1,0 +1,1 @@
+{"name":"Local: STL_pair","url":"e:\\journeyToCode\\Data Structure\\Binary Tree\\STL_pair.cpp","tests":[{"id":1737088905791,"input":"5\n10 20\n30 40\n50 60\n70 80\n90 95","output":"10 20\n30 40\n50 60\n70 80\n90 95"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\journeyToCode\\Data Structure\\Binary Tree\\STL_pair.cpp","group":"local","local":true}
