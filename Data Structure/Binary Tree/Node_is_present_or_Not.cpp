@@ -14,14 +14,15 @@ public:
         this->right = NULL;
     }
 };
-//Post order traversal
-void postOrder(Node *root)
+bool preOrder(Node *root, bool flag)
 {
     if (root == NULL)
         return;
-    postOrder(root->left);
-    postOrder(root->right);
-    cout << root->val << " ";
+    if (root->val == 7)
+        return flag = true;
+
+    preOrder(root->left, flag);
+    preOrder(root->right, flag);
 }
 int main()
 {
@@ -39,8 +40,9 @@ int main()
     a->right = d;
     d->left = e;
     d->right = f;
-
-    postOrder(root);
-
+    bool flag = false;
+    flag = preOrder(root, flag);
+    if (flag == true)
+        cout << "YES";
     return 0;
 }
