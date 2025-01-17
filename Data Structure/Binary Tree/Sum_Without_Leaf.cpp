@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// create node
 class Node
 {
 public:
@@ -54,42 +55,35 @@ Node *input_binary_tree()
     }
     return root;
 }
-// maximum height
-int max_height(Node *root)
-{
-    if (root == NULL)
-        return 0;
-    if (root->left == NULL && root->right == NULL)
-        return 0;
-    int l = max_height(root->left);
-    int r = max_height(root->right);
-    return max(l, r) + 1;
-}
+
 // level order traversing
-int level_order_print(Node *root)
+void level_order_traversing(Node *root)
 {
     queue<Node *> q;
     q.push(root);
-    long long int sum = 0;
+    int sum = 0;
     while (!q.empty())
     {
         Node *f = q.front();
-        q.pop();
-        if (root->left != NULL && root->right != NULL)
+        if (f->left != NULL || f->right != NULL)
         {
-            sum = sum + root->val;
+            sum = sum + f->val;
         }
+        q.pop();
         if (f->left)
             q.push(f->left);
         if (f->right)
             q.push(f->right);
     }
-    return sum;
+    cout << sum;
 }
+
 int main()
 {
+    vector<int> v;
     Node *root = input_binary_tree();
-    long long int sum = level_order_print(root);
-    cout << sum;
+    level_order_traversing(root);
+    
+
     return 0;
 }
