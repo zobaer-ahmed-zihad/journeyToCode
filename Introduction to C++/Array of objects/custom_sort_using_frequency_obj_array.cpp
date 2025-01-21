@@ -1,3 +1,4 @@
+//Sorting based on maximum count
 #include <bits/stdc++.h>
 using namespace std;
 class CustomSort

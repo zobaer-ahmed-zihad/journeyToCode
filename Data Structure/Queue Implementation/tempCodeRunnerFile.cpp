@@ -1,3 +1,2 @@
 
-        head->prev = NULL;
-    }
+        {
