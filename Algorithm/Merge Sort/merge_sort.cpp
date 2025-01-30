@@ -1,18 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-void merge(int ar[], int l, int m, int r)
+
+void merge(int ar[], int l, int mid, int r)
 {
-    int leftSize = m - l + 1;
-    int rightSize = r - m;
+    int leftSize = mid - l + 1;
+    int rightSize = r - mid;
     int L[leftSize], R[rightSize];
     int k = 0;
-    for (int i = l; i <= m; i++)
+    for (int i = l; i <= mid; i++)
     {
         L[k] = ar[i];
         k++;
     }
     k = 0;
-    for (int i = m + 1; i <= r; i++)
+    for (int i = mid + 1; i <= r; i++)
     {
         R[k] = ar[i];
         k++;
@@ -36,31 +37,42 @@ void merge(int ar[], int l, int m, int r)
     while (i < leftSize)
     {
         ar[curr] = L[i];
-        curr++;
         i++;
+        curr++;
     }
     while (j < rightSize)
     {
         ar[curr] = R[j];
-        curr++;
         j++;
+        curr++;
     }
 }
+void merge_sort(int ar[], int l, int r)
+{
+    if (l < r)
+    {
+        int mid = (l + r) / 2;
+        merge_sort(ar, l, mid);
+        merge_sort(ar, mid + 1, r);
+        merge(ar, l, mid, r);
+    }
+}
+
 int main()
 {
     int n;
     cin >> n;
     int ar[n];
-
     for (int i = 0; i < n; i++)
     {
         cin >> ar[i];
     }
 
-    merge(ar, 0, 3, n - 1);
+    merge_sort(ar, 0, n - 1);
     for (int i = 0; i < n; i++)
     {
         cout << ar[i] << " ";
     }
+
     return 0;
 }
