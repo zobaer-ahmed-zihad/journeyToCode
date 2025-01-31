@@ -1,0 +1,1 @@
+{"name":"Local: DFS_Traversal","url":"e:\\journeyToCode\\Algorithm\\Graph\\DFS_Traversal.cpp","tests":[{"id":1738347769341,"input":"5 4\n1 2\n1 3\n2 4\n4 5","output":"1\n2\n4\n5\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\journeyToCode\\Algorithm\\Graph\\DFS_Traversal.cpp","group":"local","local":true}
