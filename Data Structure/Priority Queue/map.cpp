@@ -6,6 +6,7 @@ int main(){
    mp["zihad"] = 7;
    mp["Robik"] = 164;
    mp["Khaled"] = 93;
+   
 //    mp["rashed"] = 0;
 //    cout<<mp["zihad"]<<endl;
 
