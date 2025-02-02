@@ -13,9 +13,13 @@ int main()
         cin >> a >> b;
         v.push_back({a, b});
     }
-    for (int i = 0; i < v.size(); i++)
+    // for (int i = 0; i < v.size(); i++)
+    // {
+    //     cout << v[i].first << " " << v[i].second << endl;
+    // }
+    for (pair<int, int> p : v)
     {
-        cout << v[i].first << " " << v[i].second << endl;
+        cout << p.first << " " << p.second << endl;
     }
 
     return 0;
