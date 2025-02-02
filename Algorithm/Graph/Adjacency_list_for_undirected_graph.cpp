@@ -4,7 +4,7 @@ int main()
 {
     int n, e;
     cin >> n >> e;
-    vector<int> adj[n + 1];
+    vector<int> adj[n];
     while (e--)
     {
         int a, b;
@@ -13,7 +13,16 @@ int main()
         adj[b].push_back(a);
     }
 
-    for (int i = 0; i <= n; i++)
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << i << " -> ";
+    //     for (int v : adj[i])
+    //         cout << v << " ";
+
+    //     cout << endl;
+    // }
+
+    for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < adj[i].size(); j++)
         {
@@ -21,6 +30,5 @@ int main()
         }
         cout << endl;
     }
-
     return 0;
 }
