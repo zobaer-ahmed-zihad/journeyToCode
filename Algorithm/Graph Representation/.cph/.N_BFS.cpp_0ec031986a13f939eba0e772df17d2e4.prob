@@ -1,1 +1,0 @@
-{"name":"Local: N_BFS","url":"e:\\journeyToCode\\Algorithm\\Graph\\N_BFS.cpp","tests":[{"id":1738588249680,"input":"5 4\n0 2\n0 1\n2 4\n1 3","output":"0\n2\n1\n4\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\journeyToCode\\Algorithm\\Graph\\N_BFS.cpp","group":"local","local":true}
