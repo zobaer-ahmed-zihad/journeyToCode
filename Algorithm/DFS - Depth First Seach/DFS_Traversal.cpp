@@ -1,20 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1e5 + 5;
-vector<int> v[N];
+int const N = 1e5 + 5;
+vector<int> adj_list[N];
 bool vis[N];
 
 void DFS(int src)
 {
+    cout << src << " ";
     vis[src] = true;
-    cout << src << endl;
-    for (int i = 0; i < v[src].size(); i++)
+
+    // for (int child : adj_list[src])
+    // {
+    //     if (!vis[child])
+    //         DFS(child);
+    // }
+
+    for (int i = 0; i < adj_list[src].size(); i++)
     {
-        int child = v[src][i];
-        if (vis[child] == false)
-        {
+        int child = adj_list[src][i];
+        if (!vis[child])
             DFS(child);
-        }
     }
 }
 int main()
@@ -25,11 +30,10 @@ int main()
     {
         int a, b;
         cin >> a >> b;
-
-        v[a].push_back(b);
-        v[b].push_back(a);
+        adj_list[a].push_back(b);
+        adj_list[b].push_back(a);
     }
-    DFS(1);
+    DFS(0);
 
     return 0;
 }
