@@ -1,0 +1,1 @@
+{"name":"Local: Can_go","url":"e:\\journeyToCode\\Algorithm\\2D Grid\\Can_go.cpp","tests":[{"id":1738863279120,"input":"5 8\n########\n#.A#...#\n#.##.#B#\n#......#\n########","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\journeyToCode\\Algorithm\\2D Grid\\Can_go.cpp","group":"local","local":true}
