@@ -4,7 +4,7 @@ int n, e;
 vector<int> adj_list[100];
 bool vis[100];
 int par[100];
-bool flag;
+bool cycle;
 
 void BFS(int src)
 {
@@ -19,7 +19,7 @@ void BFS(int src)
         for (int child : adj_list[parent])
         {
             if (vis[child] && par[parent] != child)
-                flag = true;
+                cycle = true;
             if (!vis[child])
             {
                 q.push(child);
@@ -40,17 +40,15 @@ int main()
         adj_list[u].push_back(v);
         adj_list[v].push_back(u);
     }
-
+    cycle = false;
     for (int i = 0; i < n; i++)
     {
         if (!vis[i])
         {
-            flag = false;
             BFS(i);
-            if (flag)
-                cout << "Cycle Detected";
         }
     }
 
+    (cycle) ? cout << "Cycle Detected" : cout<<"No Cycle";
     return 0;
 }
