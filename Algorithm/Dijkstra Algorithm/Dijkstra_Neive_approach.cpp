@@ -39,13 +39,13 @@ int main()
         adj_list[u].push_back({v, w});
         adj_list[v].push_back({u, w});
     }
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
         dis[i] = INT_MAX;
     }
-    Dijkstra(1);
+    Dijkstra(0);
 
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i <n; i++)
     {
         cout << "Node " << i << " -> " << dis[i] << endl;
     }
