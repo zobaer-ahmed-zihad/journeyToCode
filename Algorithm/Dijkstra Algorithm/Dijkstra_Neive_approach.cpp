@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1e5 + 5;
-vector<pair<int, int>> v[N];
+
+const int N = 100;
+vector<pair<int, int>> adj_list[N];
 int dis[N];
-void dijkstra(int src)
+int n, e;
+void Dijkstra(int src)
 {
     queue<int> q;
     q.push(src);
@@ -14,9 +16,8 @@ void dijkstra(int src)
         int parent = q.front();
         q.pop();
 
-        for (int i = 0; i < v[parent].size(); i++)
+        for (pair<int, int> child : adj_list[parent])
         {
-            pair<int, int> child = v[parent][i];
             int childNode = child.first;
             int childCost = child.second;
 
@@ -30,24 +31,24 @@ void dijkstra(int src)
 }
 int main()
 {
-
-    int n, e;
     cin >> n >> e;
     while (e--)
     {
-        int a, b, w;
-        cin >> a >> b >> w;
-        v[a].push_back({b, w});
-        v[b].push_back({a, w});
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj_list[u].push_back({v, w});
+        adj_list[v].push_back({u, w});
     }
     for (int i = 1; i <= n; i++)
     {
         dis[i] = INT_MAX;
     }
-    dijkstra(1);
+    Dijkstra(1);
+
     for (int i = 1; i <= n; i++)
     {
-        cout << "Node " << i << ": " << dis[i] << endl;
+        cout << "Node " << i << " -> " << dis[i] << endl;
     }
+
     return 0;
 }
