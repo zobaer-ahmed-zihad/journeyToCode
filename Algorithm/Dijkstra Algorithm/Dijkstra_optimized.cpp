@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1e5 + 5;
-vector<pair<int, int>> v[N];
+const int N = 100;
+vector<pair<int, int>> adj_list[N];
 int dis[N];
 bool vis[N];
-
-void dijkstra(int src)
+int n, e;
+void Dijkstra(int src)
 {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     pq.push({0, src});
@@ -17,15 +17,15 @@ void dijkstra(int src)
         pq.pop();
         int parentCost = parent.first;
         int parentNode = parent.second;
+
         if (vis[parentNode])
         {
             continue;
         }
         vis[parentNode] = true;
 
-        for (int i = 0; i < v[parentNode].size(); i++)
+        for (pair<int, int> child : adj_list[parentNode])
         {
-            pair<int, int> child = v[parentNode][i];
             int childNode = child.first;
             int childCost = child.second;
 
@@ -35,31 +35,40 @@ void dijkstra(int src)
                 pq.push({dis[childNode], childNode});
             }
         }
+        // for (int i = 0; i < adj_list[parentNode].size(); i++)
+        // {
+        //     pair<int, int> child = adj_list[parentNode][i];
+        //     int childNode = child.first;
+        //     int childCost = child.second;
+
+        //     if (parentCost + childCost < dis[childNode])
+        //     {
+        //         dis[childNode] = parentCost + childCost;
+        //         pq.push({dis[childNode], childNode});
+        //     }
+        // }
     }
 }
-
 int main()
 {
-
-    int n, e;
     cin >> n >> e;
     while (e--)
     {
-        int a, b, w;
-        cin >> a >> b >> w;
-        v[a].push_back({b, w});
-        v[b].push_back({a, w});
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj_list[u].push_back({v, w});
+        adj_list[v].push_back({u, w});
     }
-
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
         dis[i] = INT_MAX;
     }
+    Dijkstra(0);
 
-    dijkstra(1);
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
-        cout << "Node " << i << ": " << dis[i] << endl;
+        cout << "Node " << i << " -> " << dis[i] << endl;
     }
+
     return 0;
 }
