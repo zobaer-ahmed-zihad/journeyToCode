@@ -1,0 +1,1 @@
+{"name":"Local: Union_by_rank","url":"e:\\journeyToCode\\Algorithm\\Disjoint Set\\Union_by_rank.cpp","tests":[{"id":1739890888487,"input":"7 4\n1 2\n2 3\n4 5\n6 5","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\journeyToCode\\Algorithm\\Disjoint Set\\Union_by_rank.cpp","group":"local","local":true}
