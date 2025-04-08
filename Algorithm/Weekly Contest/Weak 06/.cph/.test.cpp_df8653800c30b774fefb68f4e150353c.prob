@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"e:\\journeyToCode\\Algorithm\\Weekly Contest\\Weak 06\\test.cpp","tests":[{"id":1741976474941,"input":"9 3\n2 9\n2 6\n7 9","output":"17\n8\n9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\journeyToCode\\Algorithm\\Weekly Contest\\Weak 06\\test.cpp","group":"local","local":true}

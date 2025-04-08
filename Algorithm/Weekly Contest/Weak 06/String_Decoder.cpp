@@ -1,28 +1,33 @@
 #include <iostream>
-#include <string>
+
 using namespace std;
 
-void decodeString(const string& S) {
-    pair<int, char> result;
-    int n = S.size();
-
-    for (int i = 0; i < n; i = i + 2) {
-        char ch = S[i];        // Character
-        int count = S[i + 1] - '0';  // Convert digit char to integer
+long long Sum(long long X) 
+{
+    if (X % 2 == 0) 
+    {
+        long long Y = X / 2;
+        return Y * (Y + 1);
+    } 
+    else 
+    {
+        long long Y = (X + 1) / 2;
+        return Y * Y;
     }
-
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+int main() 
+{
+    long long N, Q;
+    cin >> N >> Q;
 
-    int t;
-    cin >> t;
-    while (t--) {
-        string st;
-        cin >> st;
-        decodeString(st);
+    for (long long q = 0; q < Q; q++) 
+    {
+        long long L, R;
+        cin >> L >> R;
+
+        long long sum = Sum(R) - Sum(L - 1);
+        cout << sum << endl;
     }
 
     return 0;
