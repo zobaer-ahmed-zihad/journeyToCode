@@ -29,10 +29,11 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        string name = get<0>(t[i]);
-        int roll = get<1>(t[i]);
-        char id = get<2>(t[i]);
-        int phone = get<3>(t[i]);
+        // string name = get<0>(t[i]);
+        // int roll = get<1>(t[i]);
+        // char id = get<2>(t[i]);
+        // int phone = get<3>(t[i]);
+        auto [name, roll, id, phone] = t[i];
         cout << name << " " << roll << " " << id << " " << phone<<endl;
     }
 
