@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     ios::sync_with_stdio(false);
@@ -13,27 +12,25 @@ int main()
         int n, m;
         cin >> n >> m;
         map<int, set<int>> mp;
-        for (int i = 1; i <= n; i++)
+        for (int i = 0; i < n; i++)
         {
-            int x;
-            cin >> x;
-            mp[x].insert(i);
+            int val;
+            cin >> val;
+            mp[val].insert(i);
         }
-
-        for (int i = 1; i <= m; i++)
+        while (m--)
         {
             int l, r;
             cin >> l >> r;
-            if ((mp.find(l) == mp.end()) || (mp.find(r) == mp.end()))
+            if (mp.find(l) == mp.end() || mp.find(r) == mp.end())
             {
                 cout << "NO" << '\n';
             }
             else
             {
-                int startingIndex, endingIndex;
-                startingIndex = *mp[l].begin();
-                endingIndex = *mp[r].rbegin();
-                if (startingIndex < endingIndex)
+                auto leftMostStartingIndex = mp[l].begin();
+                auto rightMostEndingIndex = mp[r].rbegin();
+                if (*leftMostStartingIndex < *rightMostEndingIndex)
                 {
                     cout << "YES" << '\n';
                 }
@@ -44,7 +41,6 @@ int main()
             }
         }
     }
-
     return 0;
 }
 //problem link: https://codeforces.com/problemset/problem/1702/C

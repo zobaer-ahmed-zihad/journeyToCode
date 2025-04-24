@@ -36,6 +36,7 @@ int main()
             if (y > 0)
                 pq.push(y);
         }
+        // cout<<"Size - "<<pq.size()<<endl;
         int cnt = 0;
         while (!pq.empty())
         {
