@@ -13,16 +13,16 @@ int main()
       cin >> val;
       ml.insert(val);
    }
-   int i = 1;
+   int problems = 1;
    int dayCnt = 0;
    while (!ml.empty())
    {
-      if (ml.lower_bound(i) != ml.end())
+      if (ml.lower_bound(problems) != ml.end())
       {
-         auto LB = ml.lower_bound(i);
+         auto LB = ml.lower_bound(problems);
          ml.erase(LB);
          dayCnt++;
-         i++;
+         problems++;
       }
       else
          break;
