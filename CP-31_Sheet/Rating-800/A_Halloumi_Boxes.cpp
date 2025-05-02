@@ -20,13 +20,13 @@ int main()
         {
             cin >> v[i];
         }
-        if (is_sorted(v.begin(), v.end()) || is_sorted(v.begin(), v.end(), comp) && k > 1)
+        if (is_sorted(v.begin(), v.end()) || k > 1)
         {
             cout << "YES" << '\n';
         }
         else
         {
-            (k > 1) ? cout << "YES" << '\n' : cout << "NO" << '\n';
+            cout << "NO" << '\n';
         }
     }
 
